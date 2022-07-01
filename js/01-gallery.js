@@ -4,7 +4,7 @@ import { galleryItems } from "./gallery-items.js";
 const galleryWraper = document.querySelector(".gallery");
 let makeGalery;
 
-function createBlockWithImage({ preview, original, description }) {
+function blockImage({ preview, original, description }) {
   return ` <div class="gallery__item">
         <a class="gallery__link" href = "${original}">
           <img
@@ -19,7 +19,7 @@ function createBlockWithImage({ preview, original, description }) {
 
 galleryWraper.insertAdjacentHTML(
   "beforeend",
-  galleryItems.map(createBlockWithImage).join("")
+  galleryItems.map(blockImage).join("")
 );
 
 galleryWraper.addEventListener("click", galleryClick);
